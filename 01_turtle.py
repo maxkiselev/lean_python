@@ -1,10 +1,33 @@
 from turtle import *
+from math import pi, sin
+
+
+def draw_polygons(polygon, line):
+    angle = (((polygon - 2) * 180) / polygon) / 2
+    left(angle)
+    for i in range(polygon):
+        left(360 / polygon)
+        forward(line)
+    right(angle)
+
+
+def move_turtle():
+    penup()
+    forward(20)
+    pendown()
+
 
 shape('turtle')
 color('green')
+speed(5)
+goto(0, 0)
+start_line = 20
 
-for i in range(4):
-    fd(50)
-    lt(90)
+r = 20
+for i in range(3, 23, 1):
+    x = 2*r*sin(pi/i)
+    draw_polygons(i, x)
+    move_turtle()
+    r += 20
 
 mainloop()
