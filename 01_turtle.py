@@ -20,11 +20,10 @@ def move_turtle():
 shape('turtle')
 color('green')
 speed(5)
-goto(0, 0)
 start_line = 20
-
 r = 20
-for i in range(3, 23, 1):
+
+for i in range(3, start_line, 1):
     x = 2*r*sin(pi/i)
     draw_polygons(i, x)
     move_turtle()
